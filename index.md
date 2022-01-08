@@ -212,3 +212,8 @@ mpirun -np 4 ./cosmomc test.ini
 [英文guide:1808.05080](https://arxiv.org/abs/1808.05080)
 
 [中文guide:星空下(知乎)](https://zhuanlan.zhihu.com/p/51193997)
+
+## Cobaya安装（2022.1.8）
+
+若要使用Cobya跑MCMC，仅仅执行到安装完成cfitsio即可，之后直接安装[Cobya](https://cobaya.readthedocs.io/en/latest/)，Planck Likelihood Code可使用其
+自动安装模块自动安装。
