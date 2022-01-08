@@ -3,8 +3,9 @@
 ##### 1. 操作系统
 Ubuntu 18.04 LTS
 ##### 2. Intel Fortran Compliler(ifort)
-学生可获得免费的ifort，需要带有edu的学校邮箱，验证注册intel后可以通过邮件得到。
-教育版网址：[Qualify for Free Software](https://software.intel.com/en-us/qualify-for-free-software/student)
+~~学生可获得免费的ifort，需要带有edu的学校邮箱，验证注册intel后可以通过邮件得到。
+教育版网址：[Qualify for Free Software](https://software.intel.com/en-us/qualify-for-free-software/student)~~
+（现已不可用，Intel提供了免费的Intel® oneAPI Toolkits，替代了原ifort。只能网上搜寻资源。）
 版本要求14+ 。不要使用版本19，运行CosmoMC时会出现问题。
 本次使用的是18版本：parallel_studio_xe_2018_update4_cluster_edition
 ##### 3. Open MPI
@@ -40,7 +41,7 @@ sudo pip install getdist
 ```
 ***
 ##### 2. 安装ifort
-本次安装在当前用户下，故不使用sudo，直接安装在/home/alan下。
+本次安装在当前用户下，故不使用sudo，直接安装在/home/alan下（建议sudo安装在默认目录下）。
 解压后运行install.sh或install_GUI.sh都可以，后者是图形界面安装。在下载目录运行命令:
 ```
 tar -zxvf parallel_studio_xe_2018_update4_cluster_edition.tgz
