@@ -209,4 +209,5 @@ mpirun -np 4 ./cosmomc test.ini
 #### 三. 参考资料
 
 [英文guide:1808.05080](https://arxiv.org/abs/1808.05080)
+
 [中文guide:星空下(知乎)](https://zhuanlan.zhihu.com/p/51193997)
