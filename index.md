@@ -42,7 +42,7 @@ sudo pip install getdist
 ```
 ***
 ##### 2. 安装ifort
-本次安装在当前用户下，故不使用sudo，直接安装在/home/alan下（建议sudo安装在默认目录下）。
+本次安装在当前用户下，故不使用sudo（建议sudo安装在默认目录下）。
 解压后运行install.sh或install_GUI.sh都可以，后者是图形界面安装。在下载目录运行命令:
 ```
 tar -zxvf parallel_studio_xe_2018_update4_cluster_edition.tgz
@@ -56,7 +56,7 @@ gedit ~/.bahsrc
 ```
 在最下方加入：
 ```
-source /home/alan/intel/compilers_and_libraries_2018.5.274/linux/bin/ifortvars.sh intel64
+source /yourintelpath/intel/compilers_and_libraries_2018.5.274/linux/bin/ifortvars.sh intel64
 ```
 然后
 ```
@@ -77,7 +77,7 @@ Copyright (C) 1985-2018 Intel Corporation.  All rights reserved.
 ```
 tar -zxvf openmpi-4.0.3.tar.gz
 cd openmpi-4.0.3
-./configure --prefix=/home/alan/program/software/openmpi F77=/home/alan/intel/compilers_and_libraries_2018.5.274/linux/bin/intel64/ifort FC=/home/alan/intel/compilers_and_libraries_2018.5.274/linux/bin/intel64/ifort F90=/home/alan/intel/compilers_and_libraries_2018.5.274/linux/bin/intel64/ifort
+./configure --prefix=/youropenmpipath/openmpi F77=/yourintelpath/intel/compilers_and_libraries_2018.5.274/linux/bin/intel64/ifort FC=/yourintelpath/intel/compilers_and_libraries_2018.5.274/linux/bin/intel64/ifort F90=/yourintelpath/intel/compilers_and_libraries_2018.5.274/linux/bin/intel64/ifort
 make
 make install
 ```
@@ -87,9 +87,9 @@ gedit ~/.bashrc
 ```
 在最下方加入：
 ```
-PATH="/home/alan/program/software/openmpi/bin":${PATH}
+PATH="/youropenmpipath/openmpi/bin":${PATH}
 export PATH
-LD_LIBRARY_PATH="/home/alan/program/software/openmpi/lib/openmpi":$LD_LIBRARY_PATH
+LD_LIBRARY_PATH="/youropenmpipath/openmpi/lib/openmpi":$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 ```
 然后：
@@ -111,7 +111,7 @@ Copyright (C) 1985-2018 Intel Corporation.  All rights reserved.
 ```
 tar -zxvf cfitsio_latest.tar.gz
 cd cfitsio-3.47
-./configure --prefix=/home/alan/program/software/cfitsio
+./configure --prefix=/yourcfitsiopath/cfitsio
 make
 make install
 ```
@@ -121,7 +121,7 @@ gedit ~/.bashrc
 ```
 在最下方加入：
 ```
-export LD_LIBRARY_PATH=/home/alan/program/software/cfitsio/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/yourcfitsiopath/cfitsio/lib:${LD_LIBRARY_PATH}
 ```
 然后：
 ```
@@ -135,7 +135,7 @@ tar -zxvf COM_Likelihood_Code-v3.0_R3.01.tar.gz
 ```
 将解压好的文件移动到想要安装的目录，之后进入最里层文件夹，如：
 ```
-cd /home/alan/program/software/planck/code/plc_3.0/plc-3.01
+cd /yourplanckpath/planck/code/plc_3.0/plc-3.01
 ```
 修改Makefile文件
 ```
@@ -143,16 +143,16 @@ gedit Makefile
 ```
 检查CFITSOIPATH，修改为：
 ```
-CFITSOIPATH=/home/alan/program/software/cfitsio
+CFITSOIPATH=/yourcfitsiopath/cfitsio
 ```
 检查MKL，修改为:
 ```
-MKLROOT=/home/alan/intel/compilers_and_libraries_2018.5.274/linux/mkl
+MKLROOT=/yourintelpath/intel/compilers_and_libraries_2018.5.274/linux/mkl
 LAPACKLIBPATHMKL=-L$(MKLROOT)/lib/intel64
 ```
 保存并退出。执行命令：
 ```
-./waf configure --install_all_deps --cfitsio_prefix=/home/alan/program/software/cfitsio
+./waf configure --install_all_deps --cfitsio_prefix=/yourcfitsiopath/cfitsio
 ./waf install
 ```
 配置环境变量：
@@ -162,7 +162,7 @@ gedit ~/.bashrc
 最下方加入：
 ```
 export PLANCKLIKE=cliklike
-export CLIK_PATH=/home/alan/program/software/planck/code/plc_3.0/plc-3.01
+export CLIK_PATH=/yourplanckpath/planck/code/plc_3.0/plc-3.01
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CLIK_PATH/lib
 ```
 然后：
@@ -183,7 +183,7 @@ git clone --recursive https://github.com/cmbant/CosmoMC.git
 链接plc-3.01数据：
 ```
 cd CosmoMC/
-ln -s /home/alan/program/software/planck/code/plc_3.0/plc-3.01 ./data/clik_14.0
+ln -s /yourplanckpath/planck/code/plc_3.0/plc-3.01 ./data/clik_14.0
 ```
 编译安装：
 ```
